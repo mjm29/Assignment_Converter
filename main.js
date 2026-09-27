@@ -25,9 +25,6 @@ const tempResultLabel = document.getElementById("temperature-result-label");
 const wtResult = document.getElementById("weight-result");
 const distResult = document.getElementById("distance-result");
 const tempResult = document.getElementById("temperature-result");
-const wtInput = document.getElementById("weight-input");
-const distInput = document.getElementById("distance-input");
-const tempInput = document.getElementById("temperature-input");
 const inputs = document.querySelectorAll('#weight-input, #distance-input, #temperature-input');
 // Tab switching logic
 tabIDs.forEach((tab) => {
@@ -106,10 +103,20 @@ cards.forEach((card) => {
     const handleInput = (e) => {
         e.preventDefault();
         inputs.forEach((input) => {
+            //converts input to number array e.g. "1,2,3" -> [1, 2, 3]
             const parsedInput = input.value.split(',').map(Number);
-            console.log(parsedInput);
+            if (parsedInput.length === 0)
+                return;
+            if (input.id == "weight-input") {
+                //TODO: insert weight conversion logic (kg to lbs, lbs to kg)
+            }
+            else if (input.id == "distance-input") {
+                //TODO: insert distance conversion logic (mi to km, km to mi)
+            }
+            else {
+                //TODO: insert temperature conversion logic (C to F, F to C)
+            }
         });
     };
     card.addEventListener("submit", handleInput);
 });
-//TODO: insert formula convertion logic here
