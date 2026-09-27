@@ -31,6 +31,9 @@ tabIDs.forEach((tab: HTMLAnchorElement) => {
 
   });
 });
-//TODO: logic for reversing conversions from (kg to lbs) -> (lbs to kg) etc
+
+//Conversion reversal logic
+
+
 
 //TODO: insert formula convertion logic here

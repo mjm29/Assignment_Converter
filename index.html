@@ -23,23 +23,23 @@
       </div>
     </div>
   </nav>
-  <main class="flex justify-center items-center">
+  <main class="flex justify-center items-center min-h-screen bg-slate-200">
     <!--Weight card-->
-    <div id="weight-card" class="mt-50 bg-white rounded-2xl shadow-md p-6">
+    <div id="weight-card" class="bg-white rounded-2xl shadow-md p-6">
       <h3 class="text-lg font-bold text-slate-900">Weight</h3>
       <p class="text-sm text-slate-500 mt-1">Kilograms to pounds</p>
-      <label for="kg-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
+      <label for="weight-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
         Kilograms
       </label>
       <input
-        id="kg-input"
+        id="weight-input"
         type="number"
         value="0"
         class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900
         focus:border-blue-500 focus:outline-none"
       />
       <button
-        id="kg-button"
+        id="weight-button"
         class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
         hover:bg-blue-700 transition cursor-pointer"
       >
@@ -47,25 +47,25 @@
       </button>
       <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
         <p class="text-xs uppercase tracking-wide text-slate-500">Pounds</p>
-        <p id="kg-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
+        <p id="weight-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
       </div>
     </div>
     <!--Distance card-->
-    <div id="distance-card" class="hidden mt-50 bg-white rounded-2xl shadow-md p-6">
+    <div id="distance-card" class="hidden bg-white rounded-2xl shadow-md p-6">
       <h3 class="text-lg font-bold text-slate-900">Distance</h3>
       <p class="text-sm text-slate-500 mt-1">Miles to Kilometres</p>
-      <label for="mi-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
+      <label for="distance-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
         Miles
       </label>
       <input
-        id="mi-input"
+        id="distance-input"
         type="number"
         value="0"
         class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900
         focus:border-blue-500 focus:outline-none"
       />
       <button
-        id="mi-button"
+        id="distance-button"
         class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
         hover:bg-blue-700 transition cursor-pointer"
       >
@@ -73,25 +73,25 @@
       </button>
       <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
         <p class="text-xs uppercase tracking-wide text-slate-500">Kilometres</p>
-        <p id="mi-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
+        <p id="distance-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
       </div>
     </div>
     <!--Temp card-->
-    <div id="temperature-card" class="hidden mt-50 bg-white rounded-2xl shadow-md p-6">
+    <div id="temperature-card" class="hidden bg-white rounded-2xl shadow-md p-6">
       <h3 class="text-lg font-bold text-slate-900">Volume</h3>
       <p class="text-sm text-slate-500 mt-1">Celsius to Farenheit</p>
-      <label for="cs-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
+      <label for="temperature-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
         Celsius
       </label>
       <input
-        id="cs-input"
+        id="temperature-input"
         type="number"
         value="0"
         class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900
         focus:border-blue-500 focus:outline-none"
       />
       <button
-        id="cs-button"
+        id="temperature-button"
         class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
         hover:bg-blue-700 transition cursor-pointer"
       >
@@ -99,7 +99,7 @@
       </button>
       <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
         <p class="text-xs uppercase tracking-wide text-slate-500">Farenheit</p>
-        <p id="cs-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
+        <p id="temperature-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
       </div>
     </div>
   </main>
