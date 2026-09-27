@@ -18,13 +18,14 @@
         <div class="flex gap-8 items-center">
           <a href="#" id="weight" class="text-gray-700 hover:text-blue-600 font-medium">Weight</a>
           <a href="#" id="distance" class="text-gray-700 hover:text-blue-600 font-medium">Distance</a>
-          <a href="#" id="volume" class="text-gray-700 hover:text-blue-600 font-medium">Volume</a>
+          <a href="#" id="volume" class="text-gray-700 hover:text-blue-600 font-medium">Temperature</a>
         </div>
       </div>
     </div>
   </nav>
   <main class="flex justify-center items-center">
-    <div class="mt-50 bg-white rounded-2xl shadow-md p-6">
+    <!--Weight card-->
+    <div id="weight-card" class="mt-50 bg-white rounded-2xl shadow-md p-6">
       <h3 class="text-lg font-bold text-slate-900">Weight</h3>
       <p class="text-sm text-slate-500 mt-1">Kilograms to pounds</p>
       <label for="kg-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
@@ -47,6 +48,58 @@
       <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
         <p class="text-xs uppercase tracking-wide text-slate-500">Pounds</p>
         <p id="kg-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
+      </div>
+    </div>
+    <!--Distance card-->
+    <div id="distance-card" class="hidden mt-50 bg-white rounded-2xl shadow-md p-6">
+      <h3 class="text-lg font-bold text-slate-900">Distance</h3>
+      <p class="text-sm text-slate-500 mt-1">Miles to Kilometres</p>
+      <label for="mi-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
+        Miles
+      </label>
+      <input
+        id="mi-input"
+        type="number"
+        value="0"
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900
+        focus:border-blue-500 focus:outline-none"
+      />
+      <button
+        id="mi-button"
+        class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
+        hover:bg-blue-700 transition cursor-pointer"
+      >
+          Convert
+      </button>
+      <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
+        <p class="text-xs uppercase tracking-wide text-slate-500">Kilometres</p>
+        <p id="mi-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
+      </div>
+    </div>
+    <!--Temp card-->
+    <div id="temp-card" class="hidden mt-50 bg-white rounded-2xl shadow-md p-6">
+      <h3 class="text-lg font-bold text-slate-900">Volume</h3>
+      <p class="text-sm text-slate-500 mt-1">Celsius to Farenheit</p>
+      <label for="cs-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
+        Celsius
+      </label>
+      <input
+        id="cs-input"
+        type="number"
+        value="0"
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900
+        focus:border-blue-500 focus:outline-none"
+      />
+      <button
+        id="cs-button"
+        class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
+        hover:bg-blue-700 transition cursor-pointer"
+      >
+          Convert
+      </button>
+      <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
+        <p class="text-xs uppercase tracking-wide text-slate-500">Farenheit</p>
+        <p id="cs-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
       </div>
     </div>
   </main>
