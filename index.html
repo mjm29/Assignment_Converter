@@ -25,10 +25,13 @@
   </nav>
   <main class="flex justify-center items-center min-h-screen bg-slate-200">
     <!--Weight card-->
-    <div id="weight-card" class="bg-white rounded-2xl shadow-md p-6">
+    <form id="weight-card" class="bg-white rounded-2xl shadow-md p-6">
       <div class="flex justify-between">  
         <h3 class="text-lg font-bold text-slate-900">Weight</h3>
-        <button id="swap-btn" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">🔁lbs to kg</button>
+        <!-- CRITICAL: Added type="button" so clicking this doesn't accidentally submit the form -->
+        <button id="swap-btn-weight" type="button" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">
+          🔁lbs to kg
+        </button>
       </div>
       <p class="text-sm text-slate-500 mt-1">Kilograms to pounds</p>
       <label for="weight-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
@@ -38,13 +41,12 @@
         id="weight-input"
         type="number"
         value="0"
-        class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900
-        focus:border-blue-500 focus:outline-none"
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-blue-500 focus:outline-none"
       />
       <button
         id="weight-button"
-        class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
-        hover:bg-blue-700 transition cursor-pointer"
+        type="submit"
+        class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700 transition cursor-pointer"
       >
           Convert
       </button>
@@ -52,12 +54,14 @@
         <p class="text-xs uppercase tracking-wide text-slate-500">Pounds</p>
         <p id="weight-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
       </div>
-    </div>
+    </form>
     <!--Distance card-->
-    <div id="distance-card" class="hidden bg-white rounded-2xl shadow-md p-6">
+    <form id="distance-card" class="hidden bg-white rounded-2xl shadow-md p-6">
       <div class="flex justify-between">  
         <h3 class="text-lg font-bold text-slate-900">Distance</h3>
-        <button id="swap-btn" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">🔁km to mi</button>
+        <button id="swap-btn-distance" type="button" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">
+          🔁km to mi
+        </button>
       </div>
       <p class="text-sm text-slate-500 mt-1">Miles to Kilometres</p>
       <label for="distance-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
@@ -72,6 +76,7 @@
       />
       <button
         id="distance-button"
+        type="submit"
         class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
         hover:bg-blue-700 transition cursor-pointer"
       >
@@ -81,12 +86,14 @@
         <p class="text-xs uppercase tracking-wide text-slate-500">Kilometres</p>
         <p id="distance-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
       </div>
-    </div>
+    </form>
     <!--Temp card-->
-    <div id="temperature-card" class="hidden bg-white rounded-2xl shadow-md p-6">
+    <form id="temperature-card" class="hidden bg-white rounded-2xl shadow-md p-6">
        <div class="flex justify-between">  
         <h3 class="text-lg font-bold text-slate-900">Temperature</h3>
-        <button id="swap-btn" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">🔁℉ to ℃</button>
+        <button id="swap-btn-temperature" type="button" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">
+          🔁℉ to ℃
+        </button>
       </div>
       <p class="text-sm text-slate-500 mt-1">Celsius to Farenheit</p>
       <label for="temperature-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
@@ -101,6 +108,7 @@
       />
       <button
         id="temperature-button"
+        type="submit"
         class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
         hover:bg-blue-700 transition cursor-pointer"
       >
@@ -110,7 +118,7 @@
         <p class="text-xs uppercase tracking-wide text-slate-500">Farenheit</p>
         <p id="temperature-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
       </div>
-    </div>
+    </form>
   </main>
   <script type="module" src="/main.js"></script>
 </body>

@@ -15,7 +15,7 @@ const cards = document.querySelectorAll<HTMLDivElement>('#weight-card, #distance
 const buttons = document.querySelector<HTMLButtonElement>('#weight-button, #distance-button, #temperature-button');
 const inputs = document.querySelectorAll<HTMLLabelElement>('#weight-input, #distance-input, #temperature-button');
 const results = document.querySelectorAll<HTMLParagraphElement>('#weight-result, #distance-result, #temperature-result');
-const swapBtn = document.getElementById('swap-btn');
+const swapBtn = document.querySelectorAll<HTMLButtonElement>('#swap-btn-weight, #swap-btn-distance, #swap-btn-temperature');
 
 // Tab switching logic
 tabIDs.forEach((tab: HTMLAnchorElement) => {
