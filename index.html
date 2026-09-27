@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Converter</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  <!--Nav Bar-->
+  <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap gap-8 h-16">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="#" class="text-xl font-bold text-blue-600">Unit Converter</a>
+        </div>
+        <!--Link to each tab -->
+        <div class="flex gap-8 items-center">
+          <a href="#" id="weight" class="text-gray-700 hover:text-blue-600 font-medium">Weight</a>
+          <a href="#" id="distance" class="text-gray-700 hover:text-blue-600 font-medium">Distance</a>
+          <a href="#" id="volume" class="text-gray-700 hover:text-blue-600 font-medium">Volume</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main class="flex justify-center items-center">
+    <div class="mt-50 bg-white rounded-2xl shadow-md p-6">
+      <h3 class="text-lg font-bold text-slate-900">Weight</h3>
+      <p class="text-sm text-slate-500 mt-1">Kilograms to pounds</p>
+      <label for="kg-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
+        Kilograms
+      </label>
+      <input
+        id="kg-input"
+        type="number"
+        value="0"
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900
+        focus:border-blue-500 focus:outline-none"
+      />
+      <button
+        id="kg-button"
+        class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
+        hover:bg-blue-700 transition cursor-pointer"
+      >
+          Convert
+      </button>
+      <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
+        <p class="text-xs uppercase tracking-wide text-slate-500">Pounds</p>
+        <p id="kg-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
