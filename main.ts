@@ -9,10 +9,15 @@
 *   inputs and once the convert button is clicked the output is displayed.
 */
 
-//Tab Switching Logic
+// Global vars
 const tabIDs =  document.querySelectorAll<HTMLAnchorElement>('#weight, #distance, #temperature');
 const cards = document.querySelectorAll<HTMLDivElement>('#weight-card, #distance-card, #temperature-card');
+const buttons = document.querySelector<HTMLButtonElement>('#weight-button, #distance-button, #temperature-button');
+const inputs = document.querySelectorAll<HTMLLabelElement>('#weight-input, #distance-input, #temperature-button');
+const results = document.querySelectorAll<HTMLParagraphElement>('#weight-result, #distance-result, #temperature-result');
+const swapBtn = document.getElementById('swap-btn');
 
+// Tab switching logic
 tabIDs.forEach((tab: HTMLAnchorElement) => {
   tab.addEventListener('click', (e:MouseEvent) =>{
     e.preventDefault();

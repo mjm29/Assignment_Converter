@@ -26,7 +26,10 @@
   <main class="flex justify-center items-center min-h-screen bg-slate-200">
     <!--Weight card-->
     <div id="weight-card" class="bg-white rounded-2xl shadow-md p-6">
-      <h3 class="text-lg font-bold text-slate-900">Weight</h3>
+      <div class="flex justify-between">  
+        <h3 class="text-lg font-bold text-slate-900">Weight</h3>
+        <button id="swap-btn" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">🔁lbs to kg</button>
+      </div>
       <p class="text-sm text-slate-500 mt-1">Kilograms to pounds</p>
       <label for="weight-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
         Kilograms
@@ -52,7 +55,10 @@
     </div>
     <!--Distance card-->
     <div id="distance-card" class="hidden bg-white rounded-2xl shadow-md p-6">
-      <h3 class="text-lg font-bold text-slate-900">Distance</h3>
+      <div class="flex justify-between">  
+        <h3 class="text-lg font-bold text-slate-900">Distance</h3>
+        <button id="swap-btn" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">🔁km to mi</button>
+      </div>
       <p class="text-sm text-slate-500 mt-1">Miles to Kilometres</p>
       <label for="distance-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
         Miles
@@ -78,7 +84,10 @@
     </div>
     <!--Temp card-->
     <div id="temperature-card" class="hidden bg-white rounded-2xl shadow-md p-6">
-      <h3 class="text-lg font-bold text-slate-900">Volume</h3>
+       <div class="flex justify-between">  
+        <h3 class="text-lg font-bold text-slate-900">Temperature</h3>
+        <button id="swap-btn" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">🔁℉ to ℃</button>
+      </div>
       <p class="text-sm text-slate-500 mt-1">Celsius to Farenheit</p>
       <label for="temperature-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
         Celsius
