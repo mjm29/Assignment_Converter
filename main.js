@@ -52,7 +52,6 @@ swapBtn.forEach((swap) => {
         //split the ID to get target form (ex. get 'weight' from the id 'swap-btn-weight')
         const idParts = fullID.split('-');
         const target = idParts[2];
-        console.log(target);
         if (target == 'weight' && wtLabel) {
             if (wtLabel.textContent.trim() == "Kilograms") {
                 swap.textContent = "🔁 kg to lbs";
