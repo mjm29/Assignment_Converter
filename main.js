@@ -9,11 +9,25 @@
 *   for each tab in the navigation bar. In the card, the user can enter
 *   inputs and once the convert button is clicked the output is displayed.
 */
-//Tab Switching Logic
+// Global vars
 const tabIDs = document.querySelectorAll('#weight, #distance, #temperature');
 const cards = document.querySelectorAll('#weight-card, #distance-card, #temperature-card');
+const swapBtn = document.querySelectorAll('#swap-btn-weight, #swap-btn-distance, #swap-btn-temperature');
+const wtLabel = document.querySelector('label[for="weight-input"]');
+const distLabel = document.querySelector('label[for="distance-input"]');
+const tempLabel = document.querySelector('label[for="temperature-input"]');
+const wtCurrent = document.getElementById("current-conversion-weight");
+const distCurrent = document.getElementById("current-conversion-distance");
+const tempCurrent = document.getElementById("current-conversion-temperature");
+const wtResultLabel = document.getElementById("weight-result-label");
+const distResultLabel = document.getElementById("distance-result-label");
+const tempResultLabel = document.getElementById("temperature-result-label");
+const wtResult = document.getElementById("weight-result");
+const distResult = document.getElementById("distance-result");
+const tempResult = document.getElementById("temperature-result");
+// Tab switching logic
 tabIDs.forEach((tab) => {
-    tab.addEventListener('click', (e) => {
+    const handleTabs = (e) => {
         e.preventDefault();
         const target = tab.id;
         //add the hidden element to all tabs 
@@ -25,7 +39,62 @@ tabIDs.forEach((tab) => {
         if (activeCard) {
             activeCard.classList.remove('hidden');
         }
-    });
+        ;
+    };
+    tab.addEventListener("click", handleTabs);
 });
-//TODO: logic for reversing conversions from (kg to lbs) -> (lbs to kg) etc
+//Conversion reversal logic
+swapBtn.forEach((swap) => {
+    const handleSwap = (e) => {
+        e.preventDefault();
+        const fullID = swap.id;
+        //split the ID to get target form (ex. get 'weight' from the id 'swap-btn-weight')
+        const idParts = fullID.split('-');
+        const target = idParts[2];
+        console.log(target);
+        if (target == 'weight' && wtLabel) {
+            if (wtLabel.textContent.trim() == "Kilograms") {
+                swap.textContent = "🔁 kg to lbs";
+                wtCurrent.textContent = "Pounds to Kilograms";
+                wtLabel.textContent = "Pounds";
+                wtResultLabel.textContent = "Kilograms";
+            }
+            else {
+                swap.textContent = "🔁 lbs to kg ";
+                wtCurrent.textContent = "Kilograms to Pounds";
+                wtLabel.textContent = "Kilograms";
+                wtResultLabel.textContent = "Pounds";
+            }
+        }
+        else if (target == 'distance' && distLabel) {
+            if (distLabel.textContent.trim() == "Miles") {
+                swap.textContent = "🔁 mi to km";
+                distCurrent.textContent = "Kilometres to Miles";
+                distLabel.textContent = "Kilometres";
+                distResultLabel.textContent = "Miles";
+            }
+            else {
+                swap.textContent = "🔁 km to mi ";
+                distCurrent.textContent = "Miles to Kilometres";
+                distLabel.textContent = "Miles";
+                distResultLabel.textContent = "Kilometres";
+            }
+        }
+        else if (target == 'temperature' && tempLabel) {
+            if (tempLabel.textContent.trim() == "Celsius") {
+                swap.textContent = "🔁 ℃ to ℉";
+                tempCurrent.textContent = "Farenheit to Celsius";
+                tempLabel.textContent = "Farenheit";
+                tempResultLabel.textContent = "Celsius";
+            }
+            else {
+                swap.textContent = "🔁 ℉ to ℃";
+                tempCurrent.textContent = "Celsius to Farenheit";
+                tempLabel.textContent = "Celsius";
+                tempResultLabel.textContent = "Farenheit";
+            }
+        }
+    };
+    swap.addEventListener("click", handleSwap);
+});
 //TODO: insert formula convertion logic here

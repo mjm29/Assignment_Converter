@@ -28,12 +28,11 @@
     <form id="weight-card" class="bg-white rounded-2xl shadow-md p-6">
       <div class="flex justify-between">  
         <h3 class="text-lg font-bold text-slate-900">Weight</h3>
-        <!-- CRITICAL: Added type="button" so clicking this doesn't accidentally submit the form -->
         <button id="swap-btn-weight" type="button" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">
-          🔁lbs to kg
+          🔁 lbs to kg
         </button>
       </div>
-      <p class="text-sm text-slate-500 mt-1">Kilograms to pounds</p>
+      <p id="current-conversion-weight" class="text-sm text-slate-500 mt-1">Kilograms to Pounds</p>
       <label for="weight-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
         Kilograms
       </label>
@@ -51,7 +50,7 @@
           Convert
       </button>
       <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
-        <p class="text-xs uppercase tracking-wide text-slate-500">Pounds</p>
+        <p id="weight-result-label" class="text-xs uppercase tracking-wide text-slate-500">Pounds</p>
         <p id="weight-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
       </div>
     </form>
@@ -63,7 +62,7 @@
           🔁km to mi
         </button>
       </div>
-      <p class="text-sm text-slate-500 mt-1">Miles to Kilometres</p>
+      <p id="current-conversion-distance" class="text-sm text-slate-500 mt-1">Miles to Kilometres</p>
       <label for="distance-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
         Miles
       </label>
@@ -83,7 +82,7 @@
           Convert
       </button>
       <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
-        <p class="text-xs uppercase tracking-wide text-slate-500">Kilometres</p>
+        <p id="distance-result-label" class="text-xs uppercase tracking-wide text-slate-500">Kilometres</p>
         <p id="distance-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
       </div>
     </form>
@@ -95,7 +94,7 @@
           🔁℉ to ℃
         </button>
       </div>
-      <p class="text-sm text-slate-500 mt-1">Celsius to Farenheit</p>
+      <p id="current-conversion-temperature" class="text-sm text-slate-500 mt-1">Celsius to Farenheit</p>
       <label for="temperature-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
         Celsius
       </label>
@@ -115,7 +114,7 @@
           Convert
       </button>
       <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
-        <p class="text-xs uppercase tracking-wide text-slate-500">Farenheit</p>
+        <p id="temperature-result-label" class="text-xs uppercase tracking-wide text-slate-500">Farenheit</p>
         <p id="temperature-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
       </div>
     </form>
