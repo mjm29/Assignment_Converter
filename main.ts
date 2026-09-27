@@ -103,10 +103,11 @@ swapBtn.forEach((swap: HTMLButtonElement) => {
 cards.forEach((card: HTMLFormElement) => {
   const handleInput = (e: SubmitEvent): void => {
     e.preventDefault();
-
+    
     inputs.forEach((input): void => {
       //converts input to number array e.g. "1,2,3" -> [1, 2, 3]
       const parsedInput = input.value.split(',').map(Number);
+      if (parsedInput.length === 0) return;
 
       if (input.id == "weight-input") {
         //TODO: insert weight conversion logic (kg to lbs, lbs to kg)
