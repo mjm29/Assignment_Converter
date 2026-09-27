@@ -25,6 +25,10 @@ const tempResultLabel = document.getElementById("temperature-result-label");
 const wtResult = document.getElementById("weight-result");
 const distResult = document.getElementById("distance-result");
 const tempResult = document.getElementById("temperature-result");
+const wtInput = document.getElementById("weight-input");
+const distInput = document.getElementById("distance-input");
+const tempInput = document.getElementById("temperature-input");
+const inputs = document.querySelectorAll('#weight-input, #distance-input, #temperature-input');
 // Tab switching logic
 tabIDs.forEach((tab) => {
     const handleTabs = (e) => {
@@ -96,5 +100,16 @@ swapBtn.forEach((swap) => {
         }
     };
     swap.addEventListener("click", handleSwap);
+});
+//turning user input in the textArea elements into number arrays ready for conversion
+cards.forEach((card) => {
+    const handleInput = (e) => {
+        e.preventDefault();
+        inputs.forEach((input) => {
+            const parsedInput = input.value.split(',').map(Number);
+            console.log(parsedInput);
+        });
+    };
+    card.addEventListener("submit", handleInput);
 });
 //TODO: insert formula convertion logic here

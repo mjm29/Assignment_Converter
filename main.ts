@@ -25,7 +25,7 @@ const tempResultLabel = document.getElementById("temperature-result-label") as H
 const wtResult = document.getElementById("weight-result") as HTMLParagraphElement;
 const distResult = document.getElementById("distance-result") as HTMLParagraphElement;
 const tempResult = document.getElementById("temperature-result") as HTMLParagraphElement;
-
+const inputs = document.querySelectorAll<HTMLTextAreaElement>('#weight-input, #distance-input, #temperature-input');
 
 // Tab switching logic
 tabIDs.forEach((tab: HTMLAnchorElement) => {
@@ -99,5 +99,26 @@ swapBtn.forEach((swap: HTMLButtonElement) => {
   swap.addEventListener("click", handleSwap);
 });
 
+//turning user input in the textArea elements into number arrays ready for conversion
+cards.forEach((card: HTMLFormElement) => {
+  const handleInput = (e: SubmitEvent): void => {
+    e.preventDefault();
 
-//TODO: insert formula convertion logic here
+    inputs.forEach((input): void => {
+      //converts input to number array e.g. "1,2,3" -> [1, 2, 3]
+      const parsedInput = input.value.split(',').map(Number);
+
+      if (input.id == "weight-input") {
+        //TODO: insert weight conversion logic (kg to lbs, lbs to kg)
+      } else if (input.id == "distance-input") {
+        //TODO: insert distance conversion logic (mi to km, km to mi)
+      } else {
+        //TODO: insert temperature conversion logic (C to F, F to C)
+      }
+      
+    });
+  };
+  card.addEventListener("submit", handleInput);
+});
+
+
