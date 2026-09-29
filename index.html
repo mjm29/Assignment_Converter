@@ -1,122 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Convert — Unit Converter</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
-        },
-        colors: {
-          teal: {
-            300: '#5EEAD4',
-          },
-          ink: {
-            950: '#0A0E12',
-            900: '#10161C',
-            800: '#1A222A',
-            700: '#2A343D',
-            400: '#8A97A3',
-            200: '#DCE3E8',
-          },
-        },
-      },
-    },
-  }
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
-  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Converter</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-ink-950 text-ink-200 min-h-screen flex flex-col">
-
-  <!-- Navbar -->
-  <header class="border-b border-ink-700">
-    <div class="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between flex-wrap gap-4">
-      <div class="flex items-center gap-2">
-        <span class="mono text-teal-300 text-lg">⇄</span>
-        <span class="text-lg font-semibold tracking-tight">Convert</span>
+<body>
+  <!--Nav Bar-->
+  <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap gap-8 h-16">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="#" class="text-xl font-bold text-blue-600">Unit Converter</a>
+        </div>
+        <!--Link to each tab -->
+        <div class="flex gap-8 items-center">
+          <a href="#" id="weight" class="text-gray-700 hover:text-blue-600 font-medium">Weight</a>
+          <a href="#" id="distance" class="text-gray-700 hover:text-blue-600 font-medium">Distance</a>
+          <a href="#" id="temperature" class="text-gray-700 hover:text-blue-600 font-medium">Temperature</a>
+        </div>
       </div>
-      <nav class="flex gap-6 mono text-sm">
-        <a id="weight" href="#" class="pb-1 border-b-2 text-teal-300 border-teal-300 transition-colors">weight</a>
-        <a id="distance" href="#" class="pb-1 border-b-2 border-transparent text-ink-400 hover:text-ink-200 transition-colors">distance</a>
-        <a id="temperature" href="#" class="pb-1 border-b-2 border-transparent text-ink-400 hover:text-ink-200 transition-colors">temperature</a>
-      </nav>
     </div>
-  </header>
-
-  <main class="flex-1 flex items-start justify-center px-6 py-12">
-    <div class="w-full max-w-md">
-
-      <!-- Weight card -->
-      <form id="weight-card" class="bg-ink-900 border border-ink-700 rounded-lg p-6">
-        <div class="flex items-center justify-between mb-6">
-          <p id="current-conversion-weight" class="text-sm text-ink-400 mono">Kilograms to Pounds</p>
-          <button type="button" id="swap-btn-weight" class="mono text-xs px-3 py-1.5 rounded border border-ink-700 text-teal-300 hover:bg-ink-800 transition-colors">🔁 kg to lbs</button>
-        </div>
-
-        <label for="weight-input" class="block text-sm font-medium mb-2">Kilograms</label>
-        <textarea id="weight-input" rows="2" placeholder="70 or 70, 82, 55" class="w-full bg-ink-950 border border-ink-700 rounded-md px-3 py-2 text-sm mono placeholder:text-ink-700 focus:outline-none focus:ring-2 focus:ring-teal-300 focus:border-transparent resize-none"></textarea>
-        <p class="text-xs text-ink-400 mt-2">Enter one value, or several separated by commas.</p>
-
-        <button type="submit" class="mt-5 w-full bg-teal-300 text-ink-950 font-semibold text-sm py-2.5 rounded-md hover:bg-teal-200 transition-colors">Convert</button>
-
-        <div class="mt-6 pt-5 border-t border-ink-700">
-          <p id="weight-result-label" class="text-sm text-ink-400 mb-1">Pounds</p>
-          <p id="weight-result" class="mono text-2xl text-ink-200">—</p>
-        </div>
-      </form>
-
-      <!-- Distance card -->
-      <form id="distance-card" class="hidden bg-ink-900 border border-ink-700 rounded-lg p-6">
-        <div class="flex items-center justify-between mb-6">
-          <p id="current-conversion-distance" class="text-sm text-ink-400 mono">Miles to Kilometres</p>
-          <button type="button" id="swap-btn-distance" class="mono text-xs px-3 py-1.5 rounded border border-ink-700 text-teal-300 hover:bg-ink-800 transition-colors">🔁 mi to km</button>
-        </div>
-
-        <label for="distance-input" class="block text-sm font-medium mb-2">Miles</label>
-        <textarea id="distance-input" rows="2" placeholder="26.2 or 5, 10, 26.2" class="w-full bg-ink-950 border border-ink-700 rounded-md px-3 py-2 text-sm mono placeholder:text-ink-700 focus:outline-none focus:ring-2 focus:ring-teal-300 focus:border-transparent resize-none"></textarea>
-        <p class="text-xs text-ink-400 mt-2">Enter one value, or several separated by commas.</p>
-
-        <button type="submit" class="mt-5 w-full bg-teal-300 text-ink-950 font-semibold text-sm py-2.5 rounded-md hover:bg-teal-200 transition-colors">Convert</button>
-
-        <div class="mt-6 pt-5 border-t border-ink-700">
-          <p id="distance-result-label" class="text-sm text-ink-400 mb-1">Kilometres</p>
-          <p id="distance-result" class="mono text-2xl text-ink-200">—</p>
-        </div>
-      </form>
-
-      <!-- Temperature card -->
-      <form id="temperature-card" class="hidden bg-ink-900 border border-ink-700 rounded-lg p-6">
-        <div class="flex items-center justify-between mb-6">
-          <p id="current-conversion-temperature" class="text-sm text-ink-400 mono">Celsius to Fahrenheit</p>
-          <button type="button" id="swap-btn-temperature" class="mono text-xs px-3 py-1.5 rounded border border-ink-700 text-teal-300 hover:bg-ink-800 transition-colors">🔁 ℃ to ℉</button>
-        </div>
-
-        <label for="temperature-input" class="block text-sm font-medium mb-2">Celsius</label>
-        <textarea id="temperature-input" rows="2" placeholder="0 or -10, 0, 37, 100" class="w-full bg-ink-950 border border-ink-700 rounded-md px-3 py-2 text-sm mono placeholder:text-ink-700 focus:outline-none focus:ring-2 focus:ring-teal-300 focus:border-transparent resize-none"></textarea>
-        <p class="text-xs text-ink-400 mt-2">Enter one value, or several separated by commas.</p>
-
-        <button type="submit" class="mt-5 w-full bg-teal-300 text-ink-950 font-semibold text-sm py-2.5 rounded-md hover:bg-teal-200 transition-colors">Convert</button>
-
-        <div class="mt-6 pt-5 border-t border-ink-700">
-          <p id="temperature-result-label" class="text-sm text-ink-400 mb-1">Fahrenheit</p>
-          <p id="temperature-result" class="mono text-2xl text-ink-200">—</p>
-        </div>
-      </form>
-
-    </div>
+  </nav>
+  <main class="flex justify-center items-center min-h-screen bg-slate-200">
+    <!--Weight card-->
+    <form id="weight-card" class="bg-white rounded-2xl shadow-md p-6">
+      <div class="flex justify-between">  
+        <h3 class="text-lg font-bold text-slate-900">Weight</h3>
+        <button id="swap-btn-weight" type="button" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">
+          🔁 lbs to kg
+        </button>
+      </div>
+      <p id="current-conversion-weight" class="text-sm text-slate-500 mt-1">Kilograms to Pounds</p>
+      <label for="weight-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
+        Kilograms
+      </label>
+      <textarea
+        id="weight-input"
+        rows="3"
+        placeholder="Enter values here: e.g. 1, 2, 3, 12.34..."
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-blue-500 focus:outline-none"></textarea>
+      <button
+        id="weight-button"
+        type="submit"
+        class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700 transition cursor-pointer"
+      >
+          Convert
+      </button>
+      <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
+        <p id="weight-result-label" class="text-xs uppercase tracking-wide text-slate-500">Pounds</p>
+        <p id="weight-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
+      </div>
+    </form>
+    <!--Distance card-->
+    <form id="distance-card" class="hidden bg-white rounded-2xl shadow-md p-6">
+      <div class="flex justify-between">  
+        <h3 class="text-lg font-bold text-slate-900">Distance</h3>
+        <button id="swap-btn-distance" type="button" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">
+          🔁km to mi
+        </button>
+      </div>
+      <p id="current-conversion-distance" class="text-sm text-slate-500 mt-1">Miles to Kilometres</p>
+      <label for="distance-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
+        Miles
+      </label>
+      <textarea
+        id="distance-input"
+        rows="3"
+        placeholder="Enter values here: e.g. 1, 2, 3, 12.34..."
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-blue-500 focus:outline-none"></textarea>
+      <button
+        id="distance-button"
+        type="submit"
+        class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
+        hover:bg-blue-700 transition cursor-pointer"
+      >
+          Convert
+      </button>
+      <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
+        <p id="distance-result-label" class="text-xs uppercase tracking-wide text-slate-500">Kilometres</p>
+        <p id="distance-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
+      </div>
+    </form>
+    <!--Temp card-->
+    <form id="temperature-card" class="hidden bg-white rounded-2xl shadow-md p-6">
+       <div class="flex justify-between">  
+        <h3 class="text-lg font-bold text-slate-900">Temperature</h3>
+        <button id="swap-btn-temperature" type="button" class="text-md p-2 text-slate-900 bg-slate-300 rounded-3xl hover:bg-slate-400">
+          🔁℉ to ℃
+        </button>
+      </div>
+      <p id="current-conversion-temperature" class="text-sm text-slate-500 mt-1">Celsius to Farenheit</p>
+      <label for="temperature-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
+        Celsius
+      </label>
+      <textarea
+        id="temperature-input"
+        rows="3"
+        placeholder="Enter values here: e.g. 1, 2, 3, 12.34..."
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-blue-500 focus:outline-none"></textarea>
+      <button
+        id="temperature-button"
+        type="submit"
+        class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
+        hover:bg-blue-700 transition cursor-pointer"
+      >
+          Convert
+      </button>
+      <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
+        <p id="temperature-result-label" class="text-xs uppercase tracking-wide text-slate-500">Farenheit</p>
+        <p id="temperature-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
+      </div>
+    </form>
   </main>
-
-  <script src="main.js"></script>
+  <script type="module" src="/main.js"></script>
 </body>
 </html>
