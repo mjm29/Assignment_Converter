@@ -3,11 +3,11 @@
   "compilerOptions": {
     // File Layout
     // "rootDir": "./src",
-    // "outDir": "./dist",
+    // "ounpx tsctDir": "./dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
+    "module": "ES2020",
     "target": "esnext",
     "types": [],
     // For nodejs:
